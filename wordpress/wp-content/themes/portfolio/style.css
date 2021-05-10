@@ -1,0 +1,498 @@
+/* 
+Theme name: portfolio
+Author: Ohad
+*/
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* Colors */
+:root {
+  --primary-color: #10cab7;
+  --secondary-color: #2c4755;
+  --tertiary-color: #6d6d6d;
+  --quaternary-color: #1f2021;
+}
+
+/* Layout */
+.container {
+  max-width: 120rem;
+  margin: auto;
+}
+
+.container-sm {
+  max-width: 96rem;
+  margin: auto;
+}
+
+.heading-secondary {
+  text-align: center;
+  color: #575757;
+}
+
+.heading-secondary--main {
+  display: block;
+  font-size: 12.7rem;
+  opacity: 0.2;
+}
+
+.heading-secondary--sub {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-top: -5rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /* 10px/16px = 62.5% -> 1rem = 10px */
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--tertiary-color);
+  /*  background: #efefef;*/
+  letter-spacing: -1px;
+}
+
+
+/* Header section */
+.header {
+  background: white;
+  width: 100%;
+  /*  height: 100px;*/
+}
+
+.header .container-sm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 2rem;
+  position: relative;
+}
+
+.header .header__logo {
+  height: 2.5rem;
+}
+
+.header .header__button .header__icon,
+.header .header__button::before,
+.header .header__button::after {
+  position: absolute;
+  right: 0;
+  top: 2rem;
+}
+
+.header .header__button {
+  width: 3.5rem;
+/*  background-color: lightcoral;*/
+  height: 3.5rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 2rem;
+  z-index: 3000;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.header .nav-btn {
+  justify-self: end;
+  direction: rtl;
+}
+
+.header .nav-btn,
+.header .nav-btn::before,
+.header .nav-btn::after {
+  width: 3rem;
+  z-index: 2000;
+  background-color: var(--secondary-color);
+  height: 2px;
+  border: none;
+}
+
+.header .nav-btn::before {
+  content: "";
+  display: block;
+  margin-top: 1rem;
+  width: 2rem;
+}
+
+.header .nav-btn::after {
+  content: "";
+  display: block;
+  margin-top: 1rem;
+}
+
+.header .header__checkbox {
+  display: none;
+}
+
+.header .header__checkbox:checked ~ .header__background {
+  transform: translateX(0);
+}
+
+.header .header__checkbox:checked ~ .header__nav {
+  transform: translateX(0rem);
+}
+
+.header .header__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 35rem;
+  z-index: 1000;
+  background-color: var(--secondary-color);
+  transition: transform .7s;
+  transform: translateX(-35rem);
+}
+
+.header .header__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 35rem;
+  padding: 2rem 5rem;
+  transition: transform .7s;
+  transform: translateX(-20rem);
+}
+
+.header .header__nav ul {
+  list-style: none;
+}
+
+.header .header__menu-label {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #5f7685;
+}
+
+.header .header__nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 300;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.header .header__nav .current-menu-item a {
+  color: var(--primary-color);
+}
+
+
+
+/* Showcase section */
+.showcase {
+  padding-bottom: 23rem;
+  display: grid;
+  justify-items: center;
+  background-position: center top 25%;
+}
+
+.showcase__title {
+  font-size: 4rem;
+  color: var(--primary-color);
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+  font-weight: 800;
+}
+
+.showcase__subtitle {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  max-width: 40rem;
+  text-align: center;
+}
+
+/* Process section */
+.process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.process .card {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  transition: 0.3s;
+}
+
+.process .card:hover {
+  box-shadow: 4px 2.5px 5px var(--tertiary-color);
+
+}
+
+.process .card__icon {
+  font-size: 5rem;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+.process .card__title {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.process .card__description {
+  font-size: 1.4rem;
+  max-width: 30rem;
+  margin: auto;
+  word-spacing: 0.2rem;
+  line-height: 2.5rem;
+}
+
+/*
+.services .container{
+  display: grid;
+}
+*/
+
+/* Services section */
+.services {}
+
+.services .container-sm {
+  display: grid;
+  /*  background-color: lightblue;*/
+  grid-template-columns: 2fr 1fr;
+  margin-top: 5rem;
+}
+
+.services .cards {
+  display: grid;
+  /*  background-color: lightcoral;*/
+  grid-template-columns: 1fr 1fr;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.services .card {
+  display: grid;
+  /*  background-color: lightgreen;*/
+  grid-template-columns: 1fr 5fr;
+}
+
+.services .card__icon {
+  font-size: 2.5rem;
+  margin: auto;
+  margin-top: 3rem;
+  color: var(--primary-color);
+}
+
+.services .card__title {
+  font-size: 1.9rem;
+  color: var(--quaternary-color);
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+.services .card__description {
+  font-size: 1.3rem;
+  max-width: 25rem;
+  line-height: 2.3rem;
+}
+
+.services .services__shapes {
+  position: relative;
+
+}
+
+.services .services-picture-box {
+  width: 20rem;
+  height: 23rem;
+  position: absolute;
+  top: 9.5rem;
+  left: 5rem;
+  z-index: 3;
+  box-shadow: 1px 1px 2px var(--tertiary-color);
+  background-position: center;
+}
+
+.services .blue-rectangle {
+  width: 8rem;
+  height: 30rem;
+  background: var(--secondary-color);
+  position: absolute;
+  right: 3rem;
+  top: 6rem;
+}
+
+/* Portfolio section */
+.portfolio {
+  padding-bottom: 5rem;
+  /*  padding-top: 5rem;*/
+}
+
+.portfolio .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 5rem;
+  grid-gap: 5rem 5rem;
+  margin-top: 10rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.portfolio .project__link {
+  text-decoration: none;
+  color: var(--quaternary-color);
+}
+
+.portfolio .card__image-box {
+  height: 30rem;
+  background-size: cover;
+}
+
+.portfolio .card__title {
+  font-size: 1.9rem;
+  color: var(--quaternary-color);
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+.portfolio .card__description {
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+}
+
+.portfolio .portfolio__button-box {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.portfolio .portfolio__button {
+  padding: 1rem 1.2rem;
+  border: 1px solid black;
+  box-shadow: 2px 2.5px 2px var(--tertiary-color);
+  text-decoration: none;
+  color: var(--quaternary-color);
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+/* About section */
+.about {}
+
+.about .container-sm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  grid-gap: 13rem;
+}
+
+.about .about__text-box p:first-child {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2;
+  /*  max-width: 400px;*/
+  padding: 2rem 0;
+}
+
+.about .about__text-box p:last-child {
+  color: var(--quaternary-color);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.about .about__picture-box {
+  position: relative;
+}
+
+.about .about__green-rectangle {
+  width: 14rem;
+  height: 18rem;
+  background: var(--secondary-color);
+  position: absolute;
+  right: 0rem;
+  top: 0rem;
+}
+
+.about .about__white-rectangle {
+  width: 8rem;
+  height: 13rem;
+  background: white;
+  position: absolute;
+  right: 0rem;
+  top: 0rem;
+  z-index: 1;
+}
+
+.about .about__image-box {
+  height: 21.5rem;
+  width: 20rem;
+  position: absolute;
+  right: 10rem;
+  top: 1.7rem;
+  z-index: 1;
+  background-size: cover;
+  background-position: right;
+}
+
+/* Footer section */
+.contact {
+  margin-bottom: 5rem;
+}
+
+.contact .container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  margin-top: 10rem;
+  margin-bottom: 8rem;
+}
+
+.contact .contact__text-box {
+  text-align: center;
+}
+
+.contact .contact__text-box p:first-child {
+  font-size: 4rem;
+  color: var(--secondary-color);
+  font-weight: 800;
+}
+
+.contact .contact__text-box p:nth-child(2) {
+  font-size: 3rem;
+  color: var(--primary-color);
+  font-weight: 800;
+  margin: 2rem 0;
+}
+
+.contact .contact__text-box p:last-child {
+  font-size: 1.2rem;
+  color: var(--quaternary-color);
+}
+
+/* Footer section */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.footer .footer__small {
+  font-size: 1.2rem;
+}
+
+.footer .footer__brand {
+  color: var(--primary-color);
+}
